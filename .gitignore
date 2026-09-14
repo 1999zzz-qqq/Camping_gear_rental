@@ -1,17 +1,24 @@
 # Python
 __pycache__/
-*.pyc
+*.py[cod]
 *.pyo
 *.egg-info/
 dist/
 build/
 
+# 虚拟环境（重要！）
+venv/
+env/
+.venv/
+ENV/
+
 # Database
 db.sqlite3
 
-# Environment
+# Environment（环境变量）
 .env
 *.env
+!.env.example
 
 # IDE
 .idea/
@@ -22,15 +29,22 @@ db.sqlite3
 logs/
 *.log
 
-# Media uploads (开发环境测试图片)
+# Media uploads（保留文件夹结构，忽略内容）
+media/*
+!media/equipment_img/
 media/equipment_img/*
+!media/equipment_img/.gitkeep
 
 # Redis
 redis/*.zip
+
+# Django Static（如果是后端收集静态文件的地方）
+staticfiles/
+static/
 
 # OS
 .DS_Store
 Thumbs.db
 
-# Node (前端独立仓库，不在此处)
+# Node
 node_modules/

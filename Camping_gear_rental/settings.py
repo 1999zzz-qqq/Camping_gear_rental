@@ -79,18 +79,23 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "Camping_gear_rental.wsgi.application"
 
+import os
+
+from dotenv import load_dotenv
+load_dotenv()
+ECRET_KEY = os.getenv('SECRET_KEY')
+DEBUG = os.getenv('DEBUG') == 'True'
 
 # Database
 # 生产环境请从环境变量读取密码：os.environ.get('MYSQL_PASSWORD')
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.mysql",
-        "NAME": "camping_info",
-        'USER': "root",
-        'PASSWORD': "swj123",  # 开发环境密码，生产环境改用环境变量
-        'HOST': '127.0.0.1',
-        'PORT': 3306,
-        'CHARSET': 'utf-8'
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': os.getenv('DB_NAME'),
+        'USER': os.getenv('DB_USER'),
+        'PASSWORD': os.getenv('DB_PASSWORD'),
+        'HOST': os.getenv('DB_HOST'),
+        'PORT': os.getenv('DB_PORT'),
     }
 }
 # 日志目录（启动时自动创建）
