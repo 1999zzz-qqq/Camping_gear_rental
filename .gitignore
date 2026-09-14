@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+
+# Database
+db.sqlite3
+
+# Environment
+.env
+*.env
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# Logs
+logs/
+*.log
+
+# Media uploads (开发环境测试图片)
+media/equipment_img/*
+
+# Redis
+redis/*.zip
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Node (前端独立仓库，不在此处)
+node_modules/
